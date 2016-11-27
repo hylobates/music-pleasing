@@ -1,0 +1,49 @@
+ion-header-bar{
+	 i{
+		font-size:26px;
+		padding: 10px;
+	}
+	.pageIconShow{
+		i{
+			opacity:0.8
+		}
+		.ionActive{
+			opacity:1;
+		}
+	}
+}
+ion-content{
+	.scroll{
+		overflow: hidden;
+		.slider{
+			height: 100%;
+			.slider-slides{
+				overflow: hidden;
+			}
+		}
+	}
+
+
+}
+.mus-person{
+	p{
+		padding: 5px;
+		text-align: center;
+	}
+}
+.sidePage{
+	top:44px;
+	bottom:44px;
+}
+.lyricPage{
+	position: absolute;
+	top:0px;
+	bottom:44px;
+	z-index: 3;
+	padding: 5px;
+	text-align: center;
+	background-color: rgba(0,0,0,.8);
+	min-height:100%;
+	color:#fff;
+	width:100%;
+}

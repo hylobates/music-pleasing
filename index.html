@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="ionic/css/ionic.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<!-- js -->
+	<script src="jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="ionic/js/ionic.min.js" type="text/javascript"></script>
+	<script src="ionic/js/ionic.bundle.min.js" type="text/javascript"></script>
+	<script src='AngularJS/angular-ui/angular-ui-router.min.js' type="text/javascript"></script>
+	<script src="common/common.js" type="text/javascript"></script>
+	<script src="js/index.js" type="text/javascript"></script>
+</head>
+<body ng-app="app" ng-controller="ioCtrl">
+
+	<ion-header-bar align-title="center" class="bar-assertive">
+	 	<button class="button button-clear" ng-click="toggleLeft()">
+		  <i class="ion-navicon-round"></i>
+		</button>
+		<h1 class="title pageIconShow" ng-click="pageSwitch($event)">
+			<i class="ion-ios-cloud" ng-class="{ionActive: pageShow==0}"></i>
+			<i class="ion-music-note" ng-class="{ionActive: pageShow==1}"></i>
+			<i class="ion-android-person" ng-class="{ionActive: pageShow==2}"></i>
+		</h1>
+		  <button class="button button-clear" ng-click="toggleRight()">
+		  <i class="ion-search"></i>
+		</button>
+	</ion-header-bar>
+<!-- **************************** -->
+	<ion-side-menus>
+		<ion-side-menu-content>
+			<ion-content>
+				<ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)" active-slide="pageShow">
+					<!-- yun  -->
+					<ion-slide class="mus-cloud" ng-controller="pageCloudCtrl">
+
+						<div ui-view='cloud'></div>
+						<div ui-view="coludSongs" class="coludSongs"></div>
+					 <!--  <div ng-repeat="album in albums" topid="{{album.id}}" ng-click="toSpecial(album.id)">
+						  <div class="item item-body">
+						    <img class="full-image" src="{{album.src}}">
+						    <p ng-bind="album.txt">
+						    </p>
+						  </div>
+					  </div> -->
+				 	 </ion-slide>
+
+					<!-- 本地 -->
+				  <ion-slide class="box" ng-controller="pageSongListCtrl">
+				  	<div ui-view='songList'></div>
+						<!-- <a class="item item-icon-left" href="#">
+						    <i class="icon ion-ios-musical-notes assertive"></i>
+						    本地音乐
+							 	</a>
+							 	<a class="item item-icon-left" href="#">
+						    <i class="icon ion-ios-clock-outline assertive"></i>
+						    最近播放
+							 	</a>
+							 	<a class="item item-icon-left" href="#">
+						    <i class="icon ion-ios-cloud-download-outline assertive"></i>
+						    下载管理
+							 	</a>
+						<div class="list">
+						  <div class="item item-divider">
+						    本地音乐
+						  </div>
+						  <a class="item item-avatar" href="#" ng-repeat="songs in songlist" ng-click="playSongUrl(songs.downUrl,songs.songid,$index,$event)">
+						   	  <img src="{{songs.albumpic_small}}">
+						      <h2 ng-bind="songs.songname"></h2>
+						      <p ng-bind="songs.singername"></p>
+						  </a>
+						</div> -->
+				  </ion-slide>
+				 	
+				  <!-- 个人 -->
+				  <ion-slide class="mus-person" ng-controller="pagePersonCtrl">
+				  <div ui-view='person'></div>
+				 	 <!-- <p ng-bind-html="lyric"></p> -->
+				  </ion-slide>
+				</ion-slide-box>
+			</ion-content>
+		</ion-side-menu-content>
+		<ion-side-menu side="left" class="sidePage">
+			<div class="list">
+				<div class="item item-divider button-positive">
+					<h3 class="button button-clear button-positive">个人中心</h3>
+				</div>
+				<a class="item item-avatar" href="#">
+					<img src="data/zedd.jpg">
+					<h2>hylobates</h2>
+					<p>13 vip</p>
+				</a>
+			</div>
+ 		</ion-side-menu>
+ 		<ion-side-menu side="right" class="sidePage">
+ 			<div class="list list-inset">
+			  <label class="item item-input">
+			    <i class="icon ion-search placeholder-icon"></i>
+			    <input type="text" placeholder="歌手名或歌曲名" ng-model="changeKey">
+			  </label>
+			  <button class="button button-block button-positive" ng-click="searchSong(changeKey)">
+			  		<i class="ion-android-search"></i>
+			  </button>
+			</div>
+ 		</ion-side-menu>
+	</ion-side-menus>
+	<!-- **************************** -->
+	<ion-footer-bar align-title="left" ng-click="showLyicPage()">
+			<audio controls="controls" autoplay style="width:100%;height:100%;background-color:#f00;" ng-src="{{songDownUrl| trusted}}">
+			</audio>			
+
+	</ion-footer-bar>
+
+</body>
+</html>

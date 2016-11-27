@@ -1,0 +1,10 @@
+<div class="list albumList">
+	<div class="item item-divider">
+		<a ui-sref="index" style="padding:10px;"><i class="ion-ios-arrow-back"></a></i> &nbsp; {{albumTitle}}
+	</div>
+	<a class="item item-avatar" href="#" ng-repeat="songs in songlist" ng-click="playSongUrl(songs.downUrl,songs.songid,$index,$event)">
+		<img src="{{songs.albumpic_small}}">
+		<h2 ng-bind="songs.songname"></h2>
+		<p ng-bind="songs.singername"></p>
+	</a>
+</div>

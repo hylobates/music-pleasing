@@ -1,0 +1,23 @@
+<a class="item item-icon-left" href="#">
+	<i class="icon ion-ios-musical-notes assertive"></i>
+	本地音乐
+</a>
+<a class="item item-icon-left" href="#">
+	<i class="icon ion-ios-clock-outline assertive"></i>
+	最近播放
+</a>
+<a class="item item-icon-left" href="#">
+	<i class="icon ion-ios-cloud-download-outline assertive"></i>
+	下载管理
+</a>
+<div class="list">
+	<div class="item item-divider">
+		本地音乐
+	</div>
+	<a class="item item-avatar" href="#" ng-repeat="songs in songlist" ng-click="playSongUrl(songs.downUrl,songs.songid,$index,$event)">
+		<img src="{{songs.albumpic_small}}">
+		<h2 ng-bind="songs.songname"></h2>
+		<p ng-bind="songs.singername"></p>
+	</a>
+</div>
+<p ng-bind-html="lyric" ng-if="isShowLyic" class="lyricPage"></p>

@@ -1,0 +1,11 @@
+[
+	{"id":3,"src":"data/zedd.jpg","txt":"欧美"},
+	{"id":5,"src":"data/zedd.jpg","txt":"内地"},
+	{"id":6,"src":"data/zedd.jpg","txt":"港台"},
+	{"id":16,"src":"data/zedd.jpg","txt":"韩国"},
+	{"id":17,"src":"data/zedd.jpg","txt":"日本"},
+	{"id":18,"src":"data/zedd.jpg","txt":"民谣"},
+	{"id":19,"src":"data/zedd.jpg","txt":"摇滚"},
+	{"id":23,"src":"data/zedd.jpg","txt":"销量"},
+	{"id":26,"src":"data/zedd.jpg","txt":"热歌"}
+]

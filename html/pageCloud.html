@@ -1,0 +1,9 @@
+<a ui-sref="coludSongs({albumTxt:album.txt})" ng-repeat="album in albums">
+	<div topid="{{album.id}}" ng-click="toSpecial(album.id,album.txt)">
+		<div class="item item-body">
+			<img class="full-image" src="{{album.src}}">
+			<p ng-bind="album.txt">
+			</p>
+		</div>
+	</div>
+</a>
